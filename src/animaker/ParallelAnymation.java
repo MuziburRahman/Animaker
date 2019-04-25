@@ -1,9 +1,10 @@
 
 package animaker;
 
+import graphics.Anymation.SingleAnimation;
+import graphics.Anymation.Anymation;
 import java.util.List;
 import javafx.animation.ParallelTransition;
-import javafx.animation.SequentialTransition;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
@@ -11,16 +12,16 @@ import javafx.collections.ObservableList;
  * @author Muzibur Rahman
  * @email  thisismuzib@gmail.com
  */
-public final  class SequentialAnymation extends Anymation{
+public final class ParallelAnymation extends Anymation{
     private final ObservableList<Anymation> children;
     
-    public SequentialAnymation(Anymation... animations) {
+    public ParallelAnymation(Anymation... animations) {
         this(FXCollections.observableArrayList(animations)); 
     }
-    public SequentialAnymation(ObservableList<Anymation> animations) {
+    public ParallelAnymation(ObservableList<Anymation> animations) {
         children = FXCollections.observableArrayList(animations);
-        description = "Sequential";
-        mainAnim = new SequentialTransition();
+        description = "Parallel";
+        mainAnim = new ParallelTransition();
         animations.forEach((sa) ->{
             ((ParallelTransition) mainAnim).getChildren().add(sa.mainAnim);
             singles.addAll(sa.getSingleAnimations());
@@ -43,6 +44,6 @@ public final  class SequentialAnymation extends Anymation{
     }
     @Override
     public String toString() {
-        return description+", size = "+ children.size();
+        return description+", size = "+ children.size()+", duration = "+mainAnim.getTotalDuration();
     }
 }

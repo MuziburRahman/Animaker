@@ -1,0 +1,29 @@
+.check-box  {
+    -fx-text-fill: white;
+}
+.check-box .box {
+    -fx-pref-width: 20;
+    -fx-pref-height: 20;
+}
+.text-field {
+    -fx-background-radius: 10px;
+}
+.combo-box{
+    -fx-background-radius: 10px;
+}
+.color-picker {
+    -fx-pref-width: 30;
+    -fx-background-radius: 10px;
+}
+#hbox {
+    -fx-background-color: #0d0d0d;
+}
+#prop-pane{
+    -fx-background-color: #0f2444;
+}
+#item-pane{
+    -fx-background-color: #253829;
+}
+#anchor-pane {
+    -fx-background-color: #000000;
+}

@@ -1,5 +1,5 @@
 
-package animaker;
+package graphics.Anymation;
 
 import java.util.List;
 import javafx.animation.ParallelTransition;
